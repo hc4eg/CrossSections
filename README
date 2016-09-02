@@ -1,0 +1,14 @@
+BH cross section code compilation:
+
+In /BH_cross_sections:
+rm cmake_install.cmake
+rm CMakeCache.txt
+rm -r CMakeFiles/
+
+Then
+cmake CMakeLists.txt
+make
+
+In /generate:
+cmake CMakeLists.txt
+make
