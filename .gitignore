@@ -1,0 +1,27 @@
+#exclude all .root, .runno, .txt files .~ files
+*.root
+*.runno
+*.txt
+!CMakeLists.txt
+*.dat
+
+# exclude text editor temp files
+*~
+*.swp
+*.swo
+\#*\#
+
+# exclude compiler output
+*.d
+*.so
+*.o
+
+#exclude make CMake related files
+current*.rndm
+dict.*
+CMakeFiles
+CMakeCache.txt
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt

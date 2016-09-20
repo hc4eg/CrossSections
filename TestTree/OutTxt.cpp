@@ -35,8 +35,11 @@ int main(int argc, char *argv[])
 	double Egamma = 60.0;
 	double Z = 92.0;
 	double Per;
+	// These are used for setting the range of points will be plot in the TGraph
+	// Since the maximum/minmum of asymmetry is near Del = 0, the data near Del = 0
+	// will be closer to real shape if they're denser.
 	cerr << "How many percent of largest range will be plot? (0, 100]" << endl;
-	cin << Per;
+	cin >> Per;
 	Per/= 100.0;
 
 	double E_p[Npts];
@@ -101,7 +104,7 @@ int main(int argc, char *argv[])
 	//Out.open(filename.c_str());
 
 
-	Out << setw(20) << "Npts = " << Npts << setw(20) << "Theta = " << Theta/DEG <<  setw(20) << "Phi = " << Phi/DEG << endl;
+	Out << setw(20) << "Npts=" << Npts << setw(20) << "Theta=" << Theta/DEG <<  setw(20) << "Phi=" << Phi/DEG << endl;
 	Out << setw(20) << "Del" << setw(20) << "Xsec" << setw(20) <<"Xsec_s" << setw(20) << "Xsec_a" << setw(20) <<"Asymmetry" << endl;
 	for (int i = 0; i < Npts; i++){
 		Out << setw(20) << Del[i] << setw(20) << Xsec[i] << setw(20) << Xsec_s[i] << setw(20) << Xsec_a[i] << setw(20) << Asym[i] << endl;

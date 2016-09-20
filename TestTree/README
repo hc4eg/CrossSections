@@ -1,0 +1,24 @@
+In this directory OutTxt.cpp generates a text file which computes results of cross section and asymmetry
+in certain Theta (here Theta_p = Theta_q) and Phi (relative azimuthal angle from p to q) within a Delta (Ee-Ep) range.
+
+To use it:
+1. Under /TestTree, type "cmake CMakeLists.txt", then "make -j4", it will generate OutTxt
+2. Type "./OutTxt", and type Value of Theta (3 to 13 degrees )under instruction, also the percentage range (0 to 100 percent)
+   of Delta (ie. Eq-Ep). (10 percent gives data from -6 MeV to 6 MeV of Delta)
+3. This will generate data file with name "Xsec.run%3d.dat".
+
+The data files will contain:
+1. Number of points, value of Theta, Phi
+2. Value of total cross section, symmetric part of cross section, asymmetric part of cross section, and asymmetry curve under certain delta.
+
+
+
+Copy/ move generated data files into /DelSmall and use Plot.C will give ROOT TGraph of cross section curves and asymmetry
+
+To use it:
+1. Copy/ move data files like "Xsec.run%3d.dat" into /DelSmall
+2. Type "root"
+3. In ROOT, Type ".L Plot.C+"
+4. In ROOT, type "AsymPlot()"
+5. Follow the instruction, type the full data file name in form "Xsec.run%3d.dat"
+6. Plots will be generated.
